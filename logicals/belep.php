@@ -13,6 +13,11 @@ if(isset($_POST['felhasznalo']) && isset($_POST['jelszo'])) {
         $row = $sth->fetch(PDO::FETCH_ASSOC);
         if($row) {
             $_SESSION['csn'] = $row['csaladi_nev']; $_SESSION['un'] = $row['uto_nev']; $_SESSION['login'] = $_POST['felhasznalo'];
+            header("Location: .");
+            exit();
+        }
+        else {
+            $errormessage = "Hibás felhasználónév vagy jelszó!";
         }
     }
     catch (PDOException $e) {

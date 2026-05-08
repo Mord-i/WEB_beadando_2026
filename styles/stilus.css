@@ -3,16 +3,24 @@ header {
     background-color: rgb(18, 205, 222);
     padding: 10px;
     margin: 10px;
-    text-align: center;
-    text-decoration:underline;
-    color:#062643
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #062643;
+    text-decoration: underline;
 }
 
 header img {
-    float: left;
-    margin: 20px 10px 0px 10px;
     width: 40px;
     height: auto;
+    margin: 0 10px;
+}
+.bejelenkezve{
+    display: inline-block;
+    margin-left: auto;
+    text-decoration: none;
+    font-style: bold;
+    color:#062643;
 }
 
 div#wrapper {
@@ -61,7 +69,6 @@ div#content img{
     padding: 3px;
     border: 3px solid blue;
 }
-
 footer {
     border-radius: 10px;
     margin: 10px;
