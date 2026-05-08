@@ -27,3 +27,12 @@ INSERT INTO `felhasznalok` (`id`,`csaladi_nev`,`uto_nev`,`bejelentkezes`,`jelszo
  (10,'Családi_10','Utónév_10','Login10',sha1('login10')),
  (11,'Családi_11','Utónév_11','Login11',sha1('login11')),
  (12,'Családi_12','Utónév_12','Login12',sha1('login12'));
+
+CREATE TABLE uzenetek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    targy VARCHAR(150) NOT NULL,
+    uzenet TEXT NOT NULL,
+    kuldve TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

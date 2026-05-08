@@ -28,15 +28,13 @@
             <?php } ?>
         <?php } ?>
     </ul>
-</nav>
+	</nav>
     <div id="wrapper">
         <div id="content">
             <?php include("./templates/pages/{$keres['fajl']}.tpl.php"); ?>
         </div>
     </div>
     <footer>
-        <?php if(isset($lablec['copyright'])) { ?>&copy;&nbsp;<?= $lablec['copyright'] ?> <?php } ?>
-		&nbsp;
         <?php if(isset($lablec['ceg'])) { ?><?= $lablec['ceg']; ?><?php } ?>
     </footer>
 </body>

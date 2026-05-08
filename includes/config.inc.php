@@ -1,6 +1,6 @@
 <?php
 $ablakcim = array(
-    'cim' => 'Mini honlap Kft.',
+    'cim' => 'Autómosó Kft.',
 );
 
 $fejlec = array(
@@ -10,8 +10,7 @@ $fejlec = array(
 );
 
 $lablec = array(
-    'copyright' => 'Copyright '.date("Y").'.',
-    'ceg' => 'Autó mosó Kft.'
+    'ceg' => 'Drobni Zsombor (EV4GAC) - Autómosó Kft. - Sztroka Alexandra (G34R4F) '
 );
 
 $oldalak = array(

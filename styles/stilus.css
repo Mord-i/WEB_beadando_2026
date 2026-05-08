@@ -1,5 +1,6 @@
 body{
     color: #062643;
+    text-align: center;
 }
 header {
     border-radius: 10px;
@@ -23,14 +24,18 @@ header img {
     font-style: bold;
     color:#062643;
 }
-images
 div#wrapper {
+    justify-content: center;
     margin: 10px;
+    width: 1200px;
+    margin: auto;
+    display:flex;
 }
 nav {
     border-radius: 10px;
     margin: 10px;
     background-color:#99FFCC;
+    font-size: medium;
 }
 
 nav ul {
@@ -105,6 +110,7 @@ div#galeria {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
+    justify-content:center;
 }
 div.kep img {
     width:250px;
