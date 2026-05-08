@@ -1,55 +1,55 @@
 header {
     border-radius: 10px;
-    background-color: yellow;
+    background-color: rgb(18, 205, 222);
     padding: 10px;
     margin: 10px;
+    text-align: center;
+    text-decoration:underline;
+    color:#062643
 }
 
 header img {
     float: left;
     margin: 20px 10px 0px 10px;
+    width: 40px;
+    height: auto;
 }
 
 div#wrapper {
     margin: 10px;
 }
-
-aside {
-    display: table-cell;
-    vertical-align: top;
-}
-
 nav {
-    margin: 0px 10px 0px 0px;
-    top: 0px;
     border-radius: 10px;
-    background-color: #FF6600;
+    margin: 10px;
+    background-color:#99FFCC;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 15px 0px;
+    display: flex !important;
+    flex-direction: row !important;
+
+    list-style: none;
+    margin: 0;
 }
 
 nav ul li {
-    padding: 0px 15px;;
+    display: block;
+    padding: 15px;
 }
-
 nav ul li.active {
-    border-right: 5px solid blue;
+    background-color:rgb(6, 218, 237);
 }
 
 nav ul a {
     text-decoration: none;
-    color: blue;
+    color: black;
 }
 
 div#content {
     display: table-cell;
     width: 100%;
     border-radius: 10px;
-    background-color: #99FFCC;
+    background-color: #62a2f6;
     padding: 15px;
 }
 
@@ -66,5 +66,5 @@ footer {
     border-radius: 10px;
     margin: 10px;
     padding: 5px 20px;
-    background-color: #CC99FF;
+    background-color: #877aff;
 }

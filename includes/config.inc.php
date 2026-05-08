@@ -6,13 +6,13 @@ $ablakcim = array(
 $fejlec = array(
     'kepforras' => 'logo.png',
     'kepalt' => 'logo',
-	'cim' => 'Mini honlap',
+	'cim' => 'Car Washing',
 	'motto' => ''
 );
 
 $lablec = array(
     'copyright' => 'Copyright '.date("Y").'.',
-    'ceg' => 'Mini honlap Kft.'
+    'ceg' => 'Autó mosó Kft.'
 );
 
 $oldalak = array(
