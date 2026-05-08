@@ -17,9 +17,6 @@
     <label>Email:</label><br>
     <input type="text" name="email" id="email"><br><br>
 
-    <label>Tárgy:</label><br>
-    <input type="text" name="targy" id="targy"><br><br>
-
     <label>Üzenet:</label><br>
     <textarea name="uzenet" id="uzenet"></textarea><br><br>
 

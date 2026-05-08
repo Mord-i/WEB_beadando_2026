@@ -1,8 +1,25 @@
 <?php
-$dbh = new PDO("mysql:host=localhost;dbname=gyakorlat7", "root", "");
-$dbh->query("SET NAMES utf8");
+try {
+    $dbh = new PDO(
+        'mysql:host=localhost;dbname=gyakorlat7',
+        'root',
+        '',
+        array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
+    );
+    $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 
-$eredmeny = $dbh->query("SELECT * FROM uzenetek ORDER BY kuldve DESC");
+    // Üzenetek lekérése (legfrissebb elöl)
+    $sql = "SELECT nev, email, uzenet, datum 
+            FROM uzenetek 
+            ORDER BY datum DESC";
+
+    $stmt = $dbh->query($sql);
+    $uzenetek = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    echo "Hiba: " . $e->getMessage();
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,14 +32,24 @@ $eredmeny = $dbh->query("SELECT * FROM uzenetek ORDER BY kuldve DESC");
 
 <h1>Beérkezett üzenetek</h1>
 
-<?php while ($row = $eredmeny->fetch()): ?>
-    <div style="border:1px solid #ccc; margin:10px; padding:10px;">
-        <b><?= $row["nev"] ?></b> (<?= $row["email"] ?>)<br>
-        <b>Tárgy:</b> <?= $row["targy"] ?><br>
-        <p><?= $row["uzenet"] ?></p>
-        <small><?= $row["kuldve"] ?></small>
-    </div>
-<?php endwhile; ?>
+<table>
+    <tr>
+        <th>Név</th>
+        <th>Email</th>
+        <th>Üzenet</th>
+        <th>Dátum</th>
+    </tr>
+
+    <?php foreach ($uzenetek as $uzenet): ?>
+    <tr>
+        <td><?= htmlspecialchars($uzenet['nev']) ?></td>
+        <td><?= htmlspecialchars($uzenet['email']) ?></td>
+        <td><?= htmlspecialchars($uzenet['uzenet']) ?></td>
+        <td><?= $uzenet['datum'] ?></td>
+    </tr>
+    <?php endforeach; ?>
+
+</table>
 
 </body>
 </html>
