@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<img src="./images/<?=$fejlec['kepforras']?>" alt="<?=$fejlec['kepalt']?>">
+		<img src="logo.png"<?=$fejlec['kepforras']?>" alt="<?=$fejlec['kepalt']?>">
 		<h1><?= $fejlec['cim'] ?></h1>
 		<div class="bejelenkezve">
 		<?php if(isset($_SESSION['login'])) { ?>Bejlentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong>

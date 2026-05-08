@@ -1,3 +1,6 @@
+body{
+    color: #062643;
+}
 header {
     border-radius: 10px;
     background-color: rgb(18, 205, 222);
@@ -6,10 +9,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #062643;
     text-decoration: underline;
 }
-
 header img {
     width: 40px;
     height: auto;
@@ -22,7 +23,7 @@ header img {
     font-style: bold;
     color:#062643;
 }
-
+images
 div#wrapper {
     margin: 10px;
 }
@@ -50,7 +51,7 @@ nav ul li.active {
 
 nav ul a {
     text-decoration: none;
-    color: black;
+    color:#021c35
 }
 
 div#content {
@@ -74,4 +75,49 @@ footer {
     margin: 10px;
     padding: 5px 20px;
     background-color: #877aff;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+video, iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.full {
+    grid-column: span 2;
+}
+div#galeria {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+div.kep img {
+    width:250px;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+input{
+    font-size: medium;
+    background-color: #ffffff;
+    border-color: none;
+}
+#alahuz{
+    text-decoration: underline;
 }
