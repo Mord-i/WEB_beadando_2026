@@ -1,7 +1,9 @@
 <?php
 	include('./includes/config.inc.php');
-	$oldal = $_SERVER['QUERY_STRING'];
-	if ($oldal!="") {
+	$oldal = $_GET['oldal'] ?? ''; 
+
+	if ($oldal != "") {
+		// Így már csak a 'crud' kulcsot fogja keresni a tömbben
 		if (isset($oldalak[$oldal]) && file_exists("./templates/pages/{$oldalak[$oldal]['fajl']}.tpl.php")) {
 			$keres = $oldalak[$oldal];
 		}
@@ -12,9 +14,4 @@
 	}
 	else $keres = $oldalak['/'];
 	include('./templates/index.tpl.php'); 
-?>
-<?php
-define("ROOT", __DIR__);
-include ROOT . "/db.php"; 	
-exit;
 ?>
