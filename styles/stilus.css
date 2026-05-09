@@ -164,5 +164,16 @@ td {
     padding: 5px;
     text-decoration: none;
     color:#021c35;
-    border: 1px solid #2651ec;;
+    background-color: #d0dafd;
+    border: 3px solid #2651ec;;
+}
+.padding{
+    padding-left: 40px;
+}
+a.letrehozas{
+    background-color: #3b68f9;
+    color: #fdfdfd;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
 }

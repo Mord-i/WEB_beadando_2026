@@ -13,3 +13,6 @@
 	else $keres = $oldalak['/'];
 	include('./templates/index.tpl.php'); 
 ?>
+<?php
+define("ROOT", __DIR__);
+include ROOT . "/db.php";

@@ -1,35 +1,36 @@
 <?php
-include "db.php";
-
-$szallodak = $pdo->query("SELECT * FROM szalloda")->fetchAll();
+include __DIR__ . "/../../db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $stmt = $pdo->prepare("
-        INSERT INTO tavasz (szalloda_az, indulas, idotartam, ar)
-        VALUES (?, ?, 8, ?)
-    ");
 
-    $stmt->execute([
-        $_POST['szalloda_az'],
-        $_POST['indulas'],
-        $_POST['ar']
-    ]);
+    if (!empty($_POST['szalloda_nev']) && !empty($_POST['helyseg_nev']) && !empty($_POST['indulas']) && !empty($_POST['ar'])) {
 
-    header("Location: index.php");
+        $stmt = $pdo->prepare("
+            INSERT INTO tavasz (szalloda_nev, helyseg_nev, indulas, ar)
+            VALUES (?, ?, ?, ?)
+        ");
+
+        $stmt->execute([
+            $_POST['szalloda_nev'],
+            $_POST['helyseg_nev'],
+            $_POST['indulas'],
+            $_POST['ar']
+        ]);
+
+        header("Location: index.php?oldal=crud");
+        exit;
+    } else {
+        $error = "Minden mező kitöltése kötelező!";
+    }
 }
 ?>
 
+<?php if(isset($error)) echo "<p style='color:red'>$error</p>"; ?>
+
 <form method="post">
 
-    Szálloda:
-    <select name="szalloda_az">
-        <?php foreach($szallodak as $s): ?>
-            <option value="<?= $s['az'] ?>">
-                <?= $s['nev'] ?>
-            </option>
-        <?php endforeach; ?>
-    </select><br>
-
+    Szálloda neve: <input name="szalloda_nev"><br>
+    Helység neve: <input name="helyseg_nev"><br>
     Indulás: <input type="date" name="indulas"><br>
     Ár: <input name="ar"><br>
 

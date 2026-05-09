@@ -1,42 +1,44 @@
 <?php
-include "db.php";
+include __DIR__ . "/../../db.php";
 
 $stmt = $pdo->query("
-SELECT 
-    tavasz.sorszam,
-    helyseg.nev AS helyseg_nev,
-    szalloda.nev AS szalloda_nev,
-    tavasz.indulas,
-    tavasz.ar
-FROM tavasz
-JOIN szalloda ON tavasz.szalloda_az = szalloda.az
-JOIN helyseg ON szalloda.helyseg_az = helyseg.az
+    SELECT 
+        tavasz.sorszam,
+        tavasz.indulas,
+        tavasz.ar,
+        szalloda.nev AS szalloda_nev,
+        helyseg.nev AS helyseg_nev
+    FROM tavasz
+    JOIN szalloda ON tavasz.szalloda_az = szalloda.az
+    JOIN helyseg ON szalloda.helyseg_az = helyseg.az    
 ");
+
+$lista = $stmt->fetchAll();
 ?>
+<a class="letrehozas" href="index.php?oldal=letrehoz">
+    Új adatsor hozzáadása
+</a>
 
-<h2>Autómósók Világszerte</h2>
-
-<h3><a href="letrehoz.php" class="idopont">+ Új időpont foglalás</a></h3>
-
+<br><br>
 <table>
 <tr>
-    <th>Város</th>
-    <th>Autómosó Neve</th>
-    <th>Foglalás</th>
+    <th>Szálloda</th>
+    <th>Helység</th>
+    <th>Indulás</th>
     <th>Ár</th>
-    <th></th>
+    <th>Művelet</th>
 </tr>
 
-<?php while($row = $stmt->fetch()): ?>
+<?php foreach($lista as $s): ?>
 <tr>
-    <td><?= $row['helyseg_nev'] ?></td>
-    <td><?= $row['szalloda_nev'] ?></td>
-    <td><?= $row['indulas'] ?></td>
-    <td><?= $row['ar'] ?> Ft</td>
+    <td><?= $s['szalloda_nev'] ?></td>
+    <td><?= $s['helyseg_nev'] ?></td>
+    <td><?= $s['indulas'] ?></td>
+    <td><?= $s['ar'] ?></td>
     <td>
-        <a href="../../szerkesztes.php?id=...">=<?= $row['sorszam'] ?>">Szerkeszt</a>
-        <a href="../../torol.php?id=<?= $row['sorszam'] ?>">Töröl</a>
+        <a href="index.php?oldal=szerkesztes&id=<?= $s['sorszam'] ?>">Szerkeszt</a>
+        <a href="index.php?oldal=torol&id=<?= $s['sorszam'] ?>">Töröl</a>
     </td>
 </tr>
-<?php endwhile; ?>
+<?php endforeach; ?>
 </table>
