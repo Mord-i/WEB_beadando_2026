@@ -8,7 +8,7 @@ document.getElementById("kapcsolatForm").addEventListener("submit", function(e) 
 
     if (nev === "") hibak.push("Név kötelező!");
     if (email === "" || !email.includes("@")) hibak.push("Hibás email!");
-    if (uzenet.length < 10) hibak.push("Üzenet legalább 10 karakter!");
+    if (uzenet.length < 3) hibak.push("Üzenet legalább 3 karakter!");
 
     if (hibak.length > 0) {
         e.preventDefault();

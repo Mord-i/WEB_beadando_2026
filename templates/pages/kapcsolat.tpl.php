@@ -1,27 +1,77 @@
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Kapcsolat</title>
-    <script src="kapcsolat.js" defer></script>
-</head>
-<body>
+<?php
+ob_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-<h1>Kapcsolat</h1>
+    $nev = trim($_POST["nev"]);
+    $email = trim($_POST["email"]);
+    $uzenet = trim($_POST["uzenet"]);
 
-<form id="kapcsolatForm" method="POST" action="mentes.php">
-    
+    $hibak = [];
+
+    if ($nev == "")
+        $hibak[] = "Név kötelező!";
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        $hibak[] = "Hibás email!";
+
+    if (strlen($uzenet) < 3)
+        $hibak[] = "Üzenet túl rövid!";
+
+    if (empty($hibak)) {
+
+        try {
+
+            $dbh = new PDO(
+                "mysql:host=localhost;dbname=gyakorlat7",
+                "root",
+                "",
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
+            );
+
+            $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
+
+            $stmt = $dbh->prepare("
+                INSERT INTO uzenetek (nev, email, uzenet)
+                VALUES (?, ?, ?)
+            ");
+
+            $stmt->execute([$nev, $email, $uzenet]);
+
+            echo "<script>window.location.href='index.php?uzenetek';</script>";
+            exit;
+
+        } catch (PDOException $e) {
+
+            echo "Hiba: " . $e->getMessage();
+        }
+
+    } else {
+
+        echo "<div style='color:red'>";
+
+        foreach ($hibak as $hiba) {
+            echo $hiba . "<br>";
+        }
+
+        echo "</div>";
+    }
+}
+?>
+
+<h1>Kapcsolat tartás velünk!</h1>
+<h2>Írd meg kérdéseid és ,hogy mi jár a fejedben:)</h2>
+
+<form method="post" action="">
+
     <label>Név:</label><br>
-    <input type="text" name="nev" id="nev"><br><br>
+    <input type="text" name="nev"><br><br>
 
     <label>Email:</label><br>
-    <input type="text" name="email" id="email"><br><br>
+    <input type="email" name="email"><br><br>
 
     <label>Üzenet:</label><br>
-    <textarea name="uzenet" id="uzenet"></textarea><br><br>
+    <textarea name="uzenet"></textarea><br><br>
 
     <button type="submit">Küldés</button>
 
 </form>
-
-<div id="hibak" style="color:red;"></div>

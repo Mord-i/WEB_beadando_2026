@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
 
     <!-- YouTube videó -->
     <div class="box">
-        <h3>GreenLine Clean autómosó</h3>
+        <h3>GreenLine Clean Autómosó</h3>
         <iframe 
         src="https://www.youtube.com/embed/mZuRCDoSu6I"
         allowfullscreen>

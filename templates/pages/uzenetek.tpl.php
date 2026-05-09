@@ -8,7 +8,6 @@ try {
     );
     $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
 
-    // Üzenetek lekérése (legfrissebb elöl)
     $sql = "SELECT nev, email, uzenet, datum 
             FROM uzenetek 
             ORDER BY datum DESC";
@@ -21,14 +20,6 @@ try {
     exit;
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Üzenetek</title>
-</head>
-<body>
 
 <h1>Beérkezett üzenetek</h1>
 
@@ -48,8 +39,4 @@ try {
         <td><?= $uzenet['datum'] ?></td>
     </tr>
     <?php endforeach; ?>
-
 </table>
-
-</body>
-</html>

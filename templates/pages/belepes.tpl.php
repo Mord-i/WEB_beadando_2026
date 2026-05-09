@@ -1,6 +1,6 @@
     <form action = "belep" method = "post">
       <fieldset>
-        <legend>Bejlentkezés</legend>
+        <h1>Bejlentkezés</h1>
         <br>
         <input type="text" name="felhasznalo" placeholder="felhasználó" required><br><br>
         <input type="password" name="jelszo" placeholder="jelszó" required><br><br>
@@ -11,7 +11,7 @@
     <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
     <form action = "regisztral" method = "post">
       <fieldset>
-        <legend>Regisztráció</legend>
+        <h1>Regisztráció</h1>
         <br>
         <input type="text" name="vezeteknev" placeholder="vezetéknév" required><br><br>
         <input type="text" name="utonev" placeholder="utónév" required><br><br>

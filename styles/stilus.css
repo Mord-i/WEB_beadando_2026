@@ -121,9 +121,48 @@ div.kep img {
 }
 input{
     font-size: medium;
-    background-color: #ffffff;
+    padding: 10px 5px 5px 5px;
+    background-color: #e2eef9;
     border-color: none;
+}
+input[type="submit"] {
+    background-color: #bbc9fc;
+    border: none;
+    cursor: pointer;
+    border: solid 1px#e2eef9;
 }
 #alahuz{
     text-decoration: underline;
+}
+table {
+    justify-content: center;
+    margin: 10px;
+    width: 1200px;
+    margin: auto;
+    display:flex;
+    border-collapse: collapse;  
+      
+    
+}
+th, td {
+    padding:20px 100px 20px 20px;
+    text-align: left;
+    color: #062643;
+    border: 3px solid #2651ec;
+}
+th {
+    text-align: center;
+    font-size: large;
+    background-color: #7f9dff;
+
+}
+td {
+    background-color: #d0dafd;
+    font-size: medium;
+}
+.idopont{
+    padding: 5px;
+    text-decoration: none;
+    color:#021c35;
+    border: 1px solid #2651ec;;
 }
