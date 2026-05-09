@@ -22,11 +22,11 @@ $lista = $stmt->fetchAll();
 <br><br>
 <table>
 <tr>
-    <th>Szálloda</th>
-    <th>Helység</th>
-    <th>Indulás</th>
+    <th>Autómosó</th>
+    <th>Város</th>
+    <th>Időpont</th>
     <th>Ár</th>
-    <th>Művelet</th>
+    <th></th>
 </tr>
 
 <?php foreach($lista as $s): ?>

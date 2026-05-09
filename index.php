@@ -15,4 +15,4 @@
 ?>
 <?php
 define("ROOT", __DIR__);
-include ROOT . "/db.php";
+include ROOT . "/db.php"; 	
