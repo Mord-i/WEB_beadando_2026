@@ -10,7 +10,7 @@ $fejlec = array(
 );
 
 $lablec = array(
-    'ceg' => 'Drobni Zsombor (EV4GAC) - Autómosó Kft. - Sztroka Alexandra (G34R4F) '
+    'ceg' => 'Autómosó Kft. - Sztroka Alexandra (G34R4F) '
 );
 
 $oldalak = array(
