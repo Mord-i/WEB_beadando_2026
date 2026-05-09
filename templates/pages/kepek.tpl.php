@@ -1,6 +1,6 @@
 <?php
     // Alkalmazás logika:
-    include('C:\xampp\htdocs\WEB_beadando_2026\includes\config.inc.php');
+    include('./includes/config.inc.php');
     
     // adatok összegyűjtése:    
     $kepek = array();

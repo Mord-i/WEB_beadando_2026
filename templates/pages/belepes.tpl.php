@@ -1,4 +1,4 @@
-    <form action = "belep" method = "post">
+    <form action = "index.php?oldal=belep" method = "post">
       <fieldset>
         <h1>Bejlentkezés</h1>
         <br>
@@ -9,7 +9,7 @@
       </fieldset>
     </form>
     <h3>Regisztrálja magát, ha még nem felhasználó!</h2>
-    <form action = "regisztral" method = "post">
+    <form action = "index.php?oldal=regisztral" method = "post">
       <fieldset>
         <h1>Regisztráció</h1>
         <br>
